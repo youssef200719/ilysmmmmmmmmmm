@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine?</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #ffdde1;
+        }
+        .container {
+            margin-top: 100px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            color: #d63384;
+        }
+        .buttons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 50px; /* Space between Yes and No buttons */
+            position: relative;
+            margin:50px;
+        }
+        .btn {
+            padding: 15px 30px;
+            font-size: 1.5rem;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+        .yes {
+            background-color: #ff4081;
+            color: white;
+        }
+        .no {
+            background-color: #ff1744;
+            color: white;
+            position: relative;
+        }
+        .gif-container {
+            margin-top: 20px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Will You Be My Valentine? 💖</h1>
+        <div class="buttons">
+            <button class="btn yes" onclick="showLove()">Yes 💕</button>
+            <button class="btn no" id="noBtn" onmouseover="moveNoButton()">No 💔</button>
+        </div>
+        <div class="gif-container" id="gifContainer">
+            <img src="https://media.giphy.com/media/jRzZrYBT9aWQ8/giphy.gif" alt="Cute Gif">
+        </div>
+    </div>
+
+    <script>
+        function showLove() {
+            document.body.innerHTML = "<h1>Yay! IYSMMMMM BABY! BIGGEST MWAHHHHHH !💖🥰</h1>" +
+                "<img src='https://media.giphy.com/media/LTcau7EnQLhHkxxG2u/giphy.gif' alt='Love Gif'>";
+        }
+
+        function moveNoButton() {
+            let noBtn = document.getElementById("noBtn");
+            let x = Math.random() * (window.innerWidth - noBtn.offsetWidth - 20);
+            let y = Math.random() * (window.innerHeight - noBtn.offsetHeight - 20);
+            noBtn.style.position = "absolute";
+            noBtn.style.left = x + "px";
+            noBtn.style.top = y + "px";
+        }
+    </script>
+</body>
+</html>
